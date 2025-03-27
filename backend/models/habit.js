@@ -1,33 +1,41 @@
 const mongoose = require('mongoose');
 const habitSchema = new mongoose.Schema({
-    title:{
+    title: {
         type: String,
         required: true
     },
-    description:{
+    description: {
         type: String,
         required: true
     },
-    createAt:{
+    createdAt: {
         type: Date,
         default: Date.now
     },
-    lastUpdate:{
+    lastUpdate: {
         type: Date,
         default: Date.now
     },
-    lastDone:{
+    lastDone: {
         type: Date,
         default: Date.now
     },
-    days:{
+    days: {
         type: Number,
         default: 1
     },
-    startedAt:{
+    startedAt: {
         type: Date,
         default: Date.now
+    },
+    finishedAt: {
+        type: Date
+    },
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
 });
 
-module.exports = mongoose.model('habit', habitSchema);
+module.exports = mongoose.model('Habit', habitSchema);
