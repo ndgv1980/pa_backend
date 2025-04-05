@@ -22,3 +22,4 @@ node_modules/
 ### Dependencies ###
 package-lock.json
 yarn.lock
+.vercel
